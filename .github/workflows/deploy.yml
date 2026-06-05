@@ -31,9 +31,13 @@ jobs:
           host: ${{ secrets.AWS_SSH_HOST }}
           username: ${{ secrets.AWS_SSH_USER }}
           key: ${{ secrets.AWS_SSH_KEY }}
+          envs: MONGO_URI,DOCKER_USER
           script: |
-            mkdir -p /home/${{ secrets.AWS_SSH_USER }}/nexus-app/
-            cd /home/${{ secrets.AWS_SSH_USER }}/nexus-app/
-            export MONGO_URI="${{ secrets.MONGO_URI }}"
-            export DOCKER_USER="${{ secrets.DOCKER_USER }}"
+            mkdir -p /home/ec2-user/nexus-app/
+            cd /home/ec2-user/nexus-app/
+            export MONGO_URI="$MONGO_URI"
+            export DOCKER_USER="$DOCKER_USER"
             docker stack deploy -c stack.yml nexus_app --with-registry-auth
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
