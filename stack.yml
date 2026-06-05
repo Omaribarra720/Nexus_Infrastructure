@@ -1,5 +1,3 @@
-
-#test 2, elastic ip
 services:
 
   backend:
@@ -18,17 +16,6 @@ services:
       update_config:
         parallelism: 1
         delay: 10s
-
-  frontend:
-    image: ${DOCKER_USER:-omaribarra720}/nexus-frontend:latest
-    ports:
-      - "80:80"
-    networks:
-      - nexus-network
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
 
 networks:
   nexus-network:
