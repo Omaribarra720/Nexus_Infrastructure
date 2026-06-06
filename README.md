@@ -5,8 +5,7 @@ Infraestructura del sistema bancario Nexus. Maneja el despliegue del backend en 
 ## Instancias EC2
 
 | Rol | IP |
-|---|---|
-| Manager (Swarm) | 23.20.204.143 |
+| Manager (Swarm Leader) | 23.20.204.143 |
 | Worker (Swarm) | cambiante |
 | Frontend | 18.205.142.157 |
 
@@ -24,4 +23,4 @@ El workflow `.github/workflows/deploy.yml` se dispara en cada push a `main` que 
 
 - [nexus_backend](https://github.com/YahirRadilla/nexus_backend)
 - [Nexus_Frontend](https://github.com/DavidHG0304/Nexus_Frontend)
-- [Nexus_Infrastructure](https://github.com/Omaibarra720/Nexus_Infrastructure)
+- [Nexus_Infrastructure](https://github.com/Omaribarra720/Nexus_Infrastructure)
